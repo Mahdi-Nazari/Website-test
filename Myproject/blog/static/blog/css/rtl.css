@@ -26,3 +26,28 @@ body {
 .pager-button {
     float: left;
 }
+
+.site-heading h1 {
+    font-size: 50px !important;
+}
+
+.post-title {
+    font-size: 28px !important;
+}
+
+.post-subtitle {
+    font-size: 18px;
+}
+
+.mainNav.is-fixed {
+    position: fixed;
+    top: -67px;
+    transition: transform .2s;
+    border-bottom: 1px solid #fff;
+    background-color: rgb(127,129,134);
+}
+
+#mainNav.is-visible {
+    transform: translate3d(0,100%,0);
+    background-color: rgb(127,129,134);
+}

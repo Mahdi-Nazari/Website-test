@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from extensions.utils import jalali_converter
 
-# Create your manager here.
+# Create your managers here.
 class ArticleManager(models.Manager):
     def published(self):
         return self.filter(status = 'p')
