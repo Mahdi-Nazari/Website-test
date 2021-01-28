@@ -1,6 +1,10 @@
 from django.contrib import admin
 from .models import Article, Category
 
+# Admin header change
+admin.site.site_header = "وبلاگ"
+
+
 # Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('position', 'title', 'slug', 'parent', 'status')
@@ -38,7 +42,7 @@ class ArticleAdmin(admin.ModelAdmin):
     actions = ['make_published', 'make_draft']
 
     def category_to_str(self, obj):
-        return ", ".join([category.title for category in obj.category_published()])
+        return ", ".join([category.title for category in obj.category.active()])
     category_to_str.short_description = "دسته بندی"
     
     def make_published(self, request, queryset):
