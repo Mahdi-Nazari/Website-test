@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+from account.models import User
+from django.urls import reverse
 from django.utils.html import format_html
 from django.utils import timezone
 from extensions.utils import jalali_converter
@@ -58,6 +59,9 @@ class Article(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("account:home")
     
     def jpublish(self):
         return jalali_converter(self.publish)

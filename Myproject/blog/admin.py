@@ -42,7 +42,7 @@ class ArticleAdmin(admin.ModelAdmin):
     actions = ['make_published', 'make_draft']
     
     def make_published(self, request, queryset):
-        rows_update = queryset.update(author = '1')
+        rows_update = queryset.update(status = 'p')
         if rows_update == 1:
             message_bit = "منتشر شد."
         else:
